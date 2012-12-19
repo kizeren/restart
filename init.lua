@@ -8,7 +8,7 @@ minetest.register_chatcommand("restart", {
     description = "Restart game.";
     privs = { privs=true; };
     func = function ( name, param )
-	os.execute("~/minetest/minetest/games/minetest/mods/restart/restart &")
+	os.execute(minetest.get_modpath("restart").."/restart &")
          minetest.request_shutdown()
     end;
 });
