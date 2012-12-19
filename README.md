@@ -2,7 +2,7 @@ minetest-restart
 ================
 
 Mod to allow restarting in game with logging abilities.  Only works on linux.  For now.
-
+This script can also be used to start the game.
 
 
 
