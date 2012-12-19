@@ -1,0 +1,18 @@
+#!/bin/tcsh
+sleep 30
+set config = ~/minetest/minetest/minetest.conf
+set world = World2
+set port = 30000
+
+
+    set index = 1000
+    while ( 1 )
+        set logfile = ~/minetest/minetest/log/$index.log
+        if ( ! -e $logfile ) break
+        @ index++
+    end
+
+    # Run minetest.
+   ~/minetest/minetest/bin/minetestserver --port $port --world $world --config $config >&! $logfile
+
+
