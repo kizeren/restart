@@ -3,19 +3,23 @@
 sleep 30
 
 #Please change to the install directories you have chosen.
-set config = ~/minetest/minetest/minetest.conf
-set world = ~/minetest/minetest/World2
+set config = ~/minetest/minetest.conf
+set world = ~/minetest/world
 set port = 30000
+
+#Don't forget to create this directory or no loggin will take place.
+set logdir ~/minetest/log
+
 
 #Comment this out if you don't want logging feature.
     set index = 1000
     while ( 1 )
-        set logfile = ~/minetest/minetest/log/$index.log
+        set logfile = $logdir/$index.log
         if ( ! -e $logfile ) break
         @ index++
     end
 
     # Run minetest.
-   ~/minetest/minetest/bin/minetestserver --port $port --world $world --config $config >&! $logfile
+   ~/minetest/bin/minetestserver --port $port --world $world --config $config >&! $logfile
 
 
